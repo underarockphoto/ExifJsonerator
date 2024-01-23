@@ -1,3 +1,7 @@
+const {
+    formatDateString,
+} = require('../parses/formatDateString')
+
 const getImgDates = (input) =>{
         const exifData = input[0]
         let errorArray = input[1]
@@ -15,7 +19,11 @@ const getImgDates = (input) =>{
         }
         if(!hasErrors){
             const {ModifyDate} = image;
-            const {DateTimeOriginal} = exif
+            const {DateTimeOriginal} = exif;
+            const modifiedDate = formatDateString(ModifyDate,file,"ModifyDate")
+            const originalDate = formatDateString(DateTimeOriginal,file,"DateTimeOriginal")
+            newImgObj.imgMod = modifiedDate;
+            newImgObj.imgDate = originalDate;
         }
         return ([exifData,errorArray,newImgObj])
 }

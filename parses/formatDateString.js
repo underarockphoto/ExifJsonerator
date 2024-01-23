@@ -40,8 +40,9 @@ const dateStringsAreValid = (dateValue,file,dateType)=>{
 }
 
 const newDateString = (dateValue)=>{   
-        const convertedColons = dateValue.replaceAll(":","-")
-        const convertedSpace = convertedColons.replace(" ","T")
+        const [dateData,timeData] = dateValue.split(" ")
+        const convertedColons = dateData.replaceAll(":","-")
+        const convertedSpace = convertedColons+"T"+timeData
         return(convertedSpace)   
 }
 

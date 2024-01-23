@@ -54,11 +54,11 @@ test("This date string is missing data!",()=>{
 })
 
 test("This date string is correctly formatted",()=>{
-    expect(newDateString(validDateString)).toBe('2021-03-31T13-34-44')
+    expect(newDateString(validDateString)).toBe('2021-03-31T13:34:44')
 })
 
 test("This function returns a formatted date string",()=>{
-    expect(formatDateString(validDateString,exampleFile,dateType)).toBe('2021-03-31T13-34-44')
+    expect(formatDateString(validDateString,exampleFile,dateType)).toBe('2021-03-31T13:34:44')
 })
 
 test("This function returns the error value",()=>{
