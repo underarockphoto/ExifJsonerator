@@ -157,23 +157,73 @@ const getImgDate = (res)=>{
         }else return reject("ERROR - File contains no DATE metadata.")
     })
 }
+const getImgCam = (res)=>{
+    const exifData = res[0]
+    const obj = res[1]
+    const {image} = exifData
+    return new Promise((resolve,reject)=>{
+        if ('Model'in image){   
+            obj.imgCam = image.Model
+            return resolve([exifData,obj])
+        }else return reject("ERROR - File contains no MODEL metadata.")
+    })
+}
+const getImgLens = (res)=>{
+    const exifData = res[0]
+    const obj = res[1]
+    const {exif} = exifData
+    return new Promise((resolve,reject)=>{
+        if ('LensModel'in exif){   
+            obj.imgLens = exif.LensModel
+            return resolve([exifData,obj])
+        }else return reject("ERROR - File contains no MODEL metadata.")
+    })
+}
+function formatShutterSpeed(speed){
+    const speedNum = Number(speed)
+    if (speedNum<1){
+        return (Math.trunc(1/speedNum).toString())
+    }else return speedNum.toString()
+}
+const getImgExp = (res)=>{
+    const exifData = res[0]
+    const obj = res[1]
+    const {exif} = exifData
+    return new Promise((resolve,reject)=>{
+        if (!exif.hasOwnProperty('ExposureTime')) return reject("ERROR - File contains no ExposureTime metadata.")
+        else if (!exif.hasOwnProperty('FNumber')) return reject("ERROR - File contains no FNumber metadata.")
+        else if (!exif.hasOwnProperty('ISO')) return reject("ERROR - File contains no ISO metadata.")
+        else{   
+            const shutter = formatShutterSpeed(exif.ExposureTime)+"s"
+            const aperture = "f/"+exif.FNumber
+            const ISO = "ISO-"+exif.ISO
+            obj.imgExp = [shutter, aperture, ISO]
+            return resolve([exifData,obj])
+        }
+    })
+}
 const buildExifJSON = (exifData)=>{
     let obj = {
-        imgTitle:"",imgDesc:"",gals:[],imgSrc:"",imgDate:"",imgExp:[],imgCam:"",imgLens:"",imgForm:"",imgFilters:"",imgLoc:"",exposures:[],key:""
+        imgTitle:"",imgDesc:"",gals:[],imgSrc:exifData.path,imgDate:"",imgExp:[],imgCam:"",imgLens:"",imgForm:"",imgFilters:"",imgLoc:"",exposures:[],key:""
     }
     return new Promise ((resolve,reject)=>{
         getImgTitle(exifData,obj)
         .then((res)=>getImgDate(res))
+        .then((res)=>getImgCam(res))
+        .then((res)=>getImgLens(res))
+        .then((res)=>getImgExp(res))
         .then((res)=>{return resolve(res)})
         .catch((err)=>{return reject(err)})
     })
     
 }
-new ExifImage({ image : imageDirectoryPath+"/tontonaturalbridge-202308 (10).jpg" }, (error, exifData) => {
+const file = "tontonaturalbridge-202308 (10).jpg"
+new ExifImage({ image : imageDirectoryPath+"/"+file }, (error, exifData) => {
     if (error)
     console.log('Error: '+error.message);
     else
     {   
+        exifData.path=file
         validateEXIFobjects(exifData)
         .then((exifData)=>buildExifJSON(exifData))
         .then((res)=>console.log(res))
