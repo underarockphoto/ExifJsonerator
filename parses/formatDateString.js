@@ -50,7 +50,9 @@ const formatDateString = (dateValue,file,dateType)=>{
         if (!dateValue||!file||!dateType)return("ERROR - Missing or undefined date inputs.")
         const isValid = dateStringsAreValid(dateValue,file,dateType)
         if(isValid===true){
-            return newDateString(dateValue)
+            const dateString = newDateString(dateValue)
+            const dateMilli = new Date(dateString).valueOf()
+            return dateMilli
         }else{
             return isValid
         }

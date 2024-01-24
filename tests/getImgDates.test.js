@@ -23,6 +23,6 @@ test('Fail when All Dates are missing.',()=>{
 })
 
 test('This returns the correct dates.',()=>{
-    const goodImgObj = {imgMod:"2024-01-09T14:40:10",imgDate:"2023-07-31T20:40:03"}
+    const goodImgObj = {imgMod:1704829210000,imgDate:1690850403000}
     expect(getImgDates([goodExampleData,[],{}])).toStrictEqual([goodExampleData,[],goodImgObj])
 })
