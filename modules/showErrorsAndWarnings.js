@@ -12,6 +12,8 @@ const showErrorsAndWarnings = (errorArray)=>{
         else if (err.includes("WARN")) numWarn = numWarn+1
         else numOther = numOther+1
     })
+    console.log("")
+    console.log("")
     console.log("Process Completed with:")
     console.log(numErr===0?("0 Errors".green):(numErr.toString()+" Errors").red)
     console.log(numWarn===0?("0 Warnings".green):(numWarn.toString()+" Warnings").yellow)
@@ -22,6 +24,7 @@ const showErrorsAndWarnings = (errorArray)=>{
         else if (err.includes("WARN")) console.log((err).yellow)
         else console.log(err)
     })
+    console.log("")
     colors.disable()
 }
 module.exports = {showErrorsAndWarnings:showErrorsAndWarnings}
