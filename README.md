@@ -30,7 +30,6 @@ This code reads the Exif data available on images using the [exif npm package](h
 {
     image:{
         Model: "Camera Model"
-        ImageID: "DESC;<description>;FORM;<imageFormat>;LOC;<location string>"
         Artist: "GAL;<Galleries,split,by,comma>;FILTERS;<filters,split,by,comma>;EXP;<exposures>;",
         ModifyDate: <date entered into website, "DateTime in ExifPilot">
     },

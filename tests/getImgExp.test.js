@@ -3,7 +3,7 @@ const {
     hasExpProps,
     getShutterSpeed,
     getFNumber,
-    getISO} = require('../parses/getImgExp')
+    getISO} = require('../modules/parses/getImgExp')
 const goodExampleData = require('./exampleObjects/exampleExifOutput')
 const missingExposureData = require('./exampleObjects/exampleExifHasNoExposure')
 

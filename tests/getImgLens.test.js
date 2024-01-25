@@ -1,4 +1,4 @@
-const getImgLens = require('../parses/getImgLens')
+const getImgLens = require('../modules/parses/getImgLens')
 const goodExampleData = require('./exampleObjects/exampleExifOutput')
 const badExampleData = require('./exampleObjects/exampleExifHasNoLensModel')
 

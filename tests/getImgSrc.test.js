@@ -1,4 +1,4 @@
-const getImgSrc = require('../parses/getImgSrc')
+const getImgSrc = require('../modules/parses/getImgSrc')
 const goodExampleData = require('./exampleObjects/exampleExifOutput')
 const badExampleData = require('./exampleObjects/exampleExifHasNoFile')
 

@@ -1,4 +1,4 @@
-const getImgCam = require('../parses/getImgCam')
+const getImgCam = require('../modules/parses/getImgCam')
 const goodExampleData = require('./exampleObjects/exampleExifOutput')
 const badExampleData = require('./exampleObjects/exampleExifHasNoModel')
 

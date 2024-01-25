@@ -1,4 +1,4 @@
-const getTitle = require('../parses/getTitle')
+const getTitle = require('../modules/parses/getTitle')
 const goodExampleData = require('./exampleObjects/exampleExifOutput')
 const badExampleData = require('./exampleObjects/exampleExifHasNoImageID')
 

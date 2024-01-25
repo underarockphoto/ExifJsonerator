@@ -3,7 +3,7 @@ const {
     dataExistsInImgDesc,
     extractImageDescriptionData,
     getDataFromImageDesc
-} = require('../parses/getDataFromImageDesc')
+} = require('../modules/parses/getDataFromImageDesc')
 
 test('Pssses if ImageDescription data does exist',()=>{
     expect(imageDescriptionDataExists({image:{ImageDescription:""}})).toBe(true)

@@ -5,7 +5,7 @@ const {
     exists,
     isAllNumbers,
     isRightLength
-} = require('../parses/formatDateString')
+} = require('../modules/parses/formatDateString')
 const validDateString = '2021:03:31 13:34:44';
 const missingDataDateString = '2021:3:31 3:44';
 const invalidLengthDateString = '2021:3:31 3:44:56'

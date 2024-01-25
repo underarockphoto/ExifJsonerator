@@ -1,4 +1,4 @@
-const buildExifObject = require("../parses/buildExifObject")
+const buildExifObject = require("../modules/parses/buildExifObject")
 const exampleDataNoArtistOrImgDesc = require('./exampleObjects/exampleExifNoArtistOrImgDesc.json')
 const exampleDataNoDatesAtAll = require('./exampleObjects/exampleExifHasNoDatesAtAll.json')
 const exampleDataNoExposure = require('./exampleObjects/exampleExifHasNoExposure.json')

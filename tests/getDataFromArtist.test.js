@@ -3,7 +3,7 @@ const {
     getDataFromArtist,
     dataExistsInArtist,
     extractArtistData
-} = require('../parses/getDataFromArtist')
+} = require('../modules/parses/getDataFromArtist')
 
 test('Pssses if Artist data does exist',()=>{
     expect(artistDataExists({image:{Artist:""}})).toBe(true)

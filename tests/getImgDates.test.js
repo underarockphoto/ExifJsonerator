@@ -1,4 +1,4 @@
-const getImgDates = require('../parses/getImgDates')
+const getImgDates = require('../modules/parses/getImgDates')
 const goodExampleData = require('./exampleObjects/exampleExifOutput')
 const noModifyDateData = require('./exampleObjects/exampleExifHasNoModifyDate')
 const noOriginalDateData = require('./exampleObjects/exampleExifHasNoOriginalDate')
