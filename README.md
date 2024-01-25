@@ -17,7 +17,7 @@ photoObject = [
         imgLens: "Lens Model"
         imgFilters: ["Array","of","Filters","Used"],
         imgLoc: "General geographic location of the image subject.",
-        imgExp: [Array of exposure points, not yet implemented.],
+        imgExposures: [Array of exposure points, not yet implemented.],
         imgForm: "Format or Medium of image capture."
         key: Integer key number used for reference.  
     }
