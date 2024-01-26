@@ -8,6 +8,6 @@
   },
   "scripts": {
     "test": "jest",
-    "start":"node exifjsonerator.js"
+    "start":"node newFile.js"
   }
 }
