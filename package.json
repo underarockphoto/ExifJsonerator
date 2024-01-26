@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "exif": "^0.6.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "start":"node newFile.js"
+  }
+}
