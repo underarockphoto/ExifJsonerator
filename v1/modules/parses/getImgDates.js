@@ -1,6 +1,6 @@
 const {
     formatDateString,
-} = require('../parses/formatDateString')
+} = require('./formatDateString')
 
 const getImgDates = (input) =>{
         const exifData = input[0]
