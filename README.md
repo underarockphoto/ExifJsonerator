@@ -77,6 +77,6 @@ Some photos need some manual overrides for various reasons.  In that case, I inc
 6. Display final output and any errors if they exist.
 
 ## Setup
-1. `npm install exif --save-dev jest` to install the exif and jest packages (if you want to run my tests).
+1. `npm install colors exif --save-dev jest` to install the exif, colors, and jest packages (if you want to run my tests).
 2. Enter your directories.
-3. `node ExifJSONerator.js`
+3. `node exifJsonerator.js`
